@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+
+        <div class="icon-cart">
+            <i class='bx bx-cart'></i>
+            <span class="item-cart-count">
+                
+            </span>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <div class="contact-cart-content">
+        
+        </div>
+        <div class="total">
+            <div class="total-title">Total :</div>
+            <div class="total-price">$0</div>
+        </div>
+        <button class="btn-Checkout" onclick="window.location.href='checkout.html'">CheckOut</button>
+        <i class='bx bx-x ' id="cart-close"></i>
+    </div>
+
+
+
+
+    
+    <div class="contact-main">
+        <div class="contact">
+            <div class="call">
+                <div class="title">
+                    <i class='bx bx-phone-call'></i>
+                    <h2>Call To Us</h2>
+                </div>
+                <div class="phone-info">
+                    <p>We are available 24/7, 7 days a week.</p><br>
+                    <p>Phone: <a href="contact.html">+8801611112222 </a></p>
+                </div>
+            </div>
+            <div class="email-box">
+                <div class="title">
+                    <i class='bx bx-envelope' ></i>
+                    <h2>Write To US</h2>
+                </div>
+                <div class="email-info">
+                    <p>Fill out our form and we will contact you within 24 hours.</p><br>
+                    <p>Emails: <a href="contact.html">support@exclusive.com </a></p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <form action="" class="contact-form">
+            <h1>Contact Us</h1>  
+            <div class="information">
+                <input type="text" placeholder="Your name*" class="name">
+                <input type="email" placeholder="Your Email*" class="email">
+                <input type="text" placeholder="Your Phone*" class="phone">
+            </div>
+            <div class="zone-message">
+                <textarea name="message" id="message" placeholder="Your Massage"></textarea>
+            </div>
+            
+            <button id="sendMessage">Send Message</button>
+        
+        </form>
+        
+        <div class="toast">
+            <div class="toast-content">
+                <i class='icon'></i>
+                <div class="message">
+                    <span class="text-1"></span>
+                    <span class="text-2"></span>
+                </div>
+            </div>
+            <i class='bx bx-x close'></i>
+            <div class="progress"></div>
+        </div>
+    </div>
+
+
+    
+
+
+</body>
+</html>

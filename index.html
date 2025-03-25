@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+
+        <div class="icon-cart">
+            <i class='bx bx-cart'></i>
+            <span class="item-cart-count">
+                
+            </span>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h2 class="cart-title">Your Cart</h2>
+        <div class="cart-content">
+            <!-- <div class="cart-box">
+                <img src="img/Tshirt.gif" alt="Tshirt" class="cart-img">
+                <div class="cart-detail">
+                    <h2 class="cart-product-title">T-Shirt Threads</h2>
+                    <span class="cart-price">$99</span>
+                    <div class="cart-quantity">
+                        <button id="decrement">-</button>
+                        <span class="number">1</span>
+                        <button id="increment">+</button>
+                    </div>
+                </div>
+                <i class='bx bx-x cart-remove'></i>
+            </div> -->
+        </div>
+        <div class="total">
+            <div class="total-title">Total :</div>
+            <div class="total-price">$0</div>
+        </div>
+        <button class="btn-Checkout" onclick="window.location.href='checkout.html'">CheckOut</button>
+        <i class='bx bx-x ' id="cart-close"></i>
+    </div>
+
+
+    <div class="Home-main">
+        <div class="box-product">
+            <div class="title">
+                <h1 ><span id="title">T-Shirt</span> Threads </h1>
+                <p>
+                    <span class="price">$99</span><br>
+                    <span class="cate">T-shirts</span> are made from soft fabrics like cotton, making them comfortable to wear all day.
+                </p>
+            </div>
+
+            <div class="image">
+                <img src="img/Tshirt.gif" alt="black" id="img-product">
+            </div>
+
+            <div class="advantag">
+                <div class="text glass">
+                    <span class="text-title">Comfortable</span>
+                    <p>
+                        <span class="cate">T-shirts</span> are made from soft fabrics like cotton, making them comfortable to wear all day.
+                    </p>
+                </div>
+                <div class="text glass">
+                    <span class="text-title">Versatile </span>
+                <p>
+                    They can be worn casually or styled for different occasions, making them a wardrobe essential.
+                </p>
+                </div>
+                <div class="text glass">
+                    <span class="text-title">Easy to Maintain</span>
+                <p>
+                    <span class="cate">T-shirts</span> are simple to wash, quick to dry, and require little to no ironing.
+                </p>
+                </div>
+                
+                
+            </div>
+
+        </div>
+
+        
+
+        <div class="container">
+            <div class="colors">
+                <button class="category active" id="T-shirt" >T-shirt</button>
+                <button class="category" id="Hoodie" >Hoodie</button>
+                <button class="category" id="Sweatshirt" >Sweatshirt</button>
+                <button class="category" id="Short" >Short</button>
+            </div>
+            <div class="button">
+                <button id="Add"><i class='bx bx-cart-add'></i></button>
+            </div>
+        </div>
+
+
+        <div class="toast">
+            <div class="toast-content">
+                <i class='icon'></i>
+                <div class="message">
+                    <span class="text-1"></span>
+                    <span class="text-2"></span>
+                </div>
+            </div>
+            <i class='bx bx-x close'></i>
+            <div class="progress"></div>
+        </div>
+        
+    </div>
+   
+
+</body>
+</html>

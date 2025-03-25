@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOut</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+
+    <div class="navbar">
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+
+        <div class="icon-cart">
+            
+        </div>
+    </div>
+    <div class="checkout-title">
+        <h1>CheckOut</h1>
+    </div>
+
+    <div class="checkout-main">
+
+        
+        <form class="checkout-form">
+                <h1>Billing Details</h1>
+            <div class="boxes">
+                <div class="input-box">
+
+                    <div class="nams">
+                        <label class="FirstName" >First Name<span style="color: red;">*</span></label>
+                        <input type="text" name="First Name" id="FirstName">
+                    </div>
+
+                    <div class="nams">
+                        <label class="LastName">Last Name<span style="color: red;">*</span></label>
+                        <input type="text" name="Last Name" id="LastName">
+                    </div>
+
+                </div>
+
+                <div class="input-box">
+                    <label class="StreetAddress">Street Address<span style="color: red;">*</span></label>
+                    <input type="text" name="Street Address" id="StreetAddress">
+                </div>
+
+                <div class="input-box">
+                    <label for="">Apartment, Floor, etc (optional)</label>
+                    <input type="text" name="Apartment" >
+                </div>
+
+                <div class="input-box">
+                    <label class="City">City<span style="color: red;">*</span></label>
+                    <input type="text" name="City" id="City">
+                </div>
+
+                <div class="input-box">
+                    <label class="PhoneNumber">Phone Number<span style="color: red;">*</span></label>
+                    <input type="text" name="Phone Number" id="PhoneNumber">
+                </div>
+
+                <div class="input-box">
+                    <label class="EmailAddress">Email Address<span style="color: red;">*</span></label>
+                    <input type="Email" name="Email Address" id="EmailAddress">
+                </div>
+        </div>
+        </form>
+
+
+        <div class="checkout-cart">
+            
+            <div class="checkout-cart-content">
+                
+                </div>
+                
+            <div class="checkout-total">
+                <div class="total-title">Subtotal:</div>
+                <div class="total-price">$0</div>
+            </div>
+            <div class="checkout-total">
+                <div class="total-title">Shipping:</div>
+                <div class="total-price">%2.5</div>
+            </div>
+            <div class="checkout-total">
+                <div class="total-checkout">Total:</div>
+                <div class="total-price-checkout">$0</div>
+            </div>
+            <div class="paiment">
+                <p>Cash on delivery</p>
+            </div>
+            <div class="coupon-box">
+                <input type="text" class="enter-code" placeholder="Coupon Code"><button id="code-coupon">Apply Coupon</button>
+            </div>
+            <button id="btn-Place-Order">Place Order</button>
+        </div>
+
+        <div class="toast">
+            <div class="toast-content">
+                <i class='icon'></i>
+                <div class="message">
+                    <span class="text-1"></span>
+                    <span class="text-2"></span>
+                </div>
+            </div>
+            <i class='bx bx-x close'></i>
+            <div class="progress"></div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
