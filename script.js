@@ -420,20 +420,6 @@ BtnSendMessage.addEventListener('click',(e)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* || Toast Message || */
 
 function toast(type,text){
@@ -498,4 +484,4 @@ function toast(type,text){
 }
 
 
-/* || Page contact || */
+
