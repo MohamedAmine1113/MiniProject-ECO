@@ -20,19 +20,13 @@ let TotalPriceElement = document.querySelector('.total-price');
 
 /* || Data Base || */
 let dataPRD;
-if(localStorage.cart != null){
-    dataPRD = JSON.parse(localStorage.cart);
-}else{
-    dataPRD = [] ; 
-}
+try { dataPRD = JSON.parse(localStorage.getItem('cart') || '[]'); if (!Array.isArray(dataPRD)) dataPRD = []; }
+catch { dataPRD = []; }
 
 let orders = [];
-let order ;
-if (localStorage.order != null){
-    order = JSON.parse(localStorage.order);
-}else{
-    order = [];
-}
+let order;
+try { order = JSON.parse(localStorage.getItem('order') || '[]'); if (!Array.isArray(order)) order = []; }
+catch { order = []; }
 
 
 /* || Home page || */
@@ -64,6 +58,7 @@ for(let i = 0 ; i < category.length ; i++){
 /* || Cart || */
 
 function changePRD(id,name,prc){
+    if (!img || !title || !price) return;
     img.src = src_product[id];
     title.innerHTML = name;
     for(let i = 0 ; i< text.length ; i++){
@@ -73,7 +68,7 @@ function changePRD(id,name,prc){
 
 }
 
-    if(cartContent.classList.contains('cart-content') || cartContent.classList.contains('about-cart-content') || cartContent.classList.contains('contact-cart-content')){
+    if(cartContent && cartIcon && cart && cartclose && (cartContent.classList.contains('cart-content') || cartContent.classList.contains('about-cart-content') || cartContent.classList.contains('contact-cart-content'))){
         cartIcon.addEventListener('click',()=>{
             cart.classList.add('active');
         })
@@ -85,7 +80,7 @@ function changePRD(id,name,prc){
 
 /* || BTN Cart || */
 
-if(cartContent.classList.contains('cart-content')){
+if(cartContent && addCartButtons && cartContent.classList.contains('cart-content')){
     addCartButtons.addEventListener('click',()=>{
 
         for(let i = 0 ; i < dataPRD.length ; i++){
@@ -116,6 +111,7 @@ if(cartContent.classList.contains('cart-content')){
 /* || Item Cart || */
 
 function showdatacart(){
+    if (!cartContent) return;
 
     cartContent.innerHTML = "";
     
@@ -178,13 +174,13 @@ function showdatacart(){
 
 }
 
-showdatacart();
+if (cartContent) showdatacart();
 
 /* || Cout PRD || */
 
 function CoutItem(){
     let CartCount = document.querySelector('.item-cart-count');
-    if(cartContent.classList.contains('cart-content') || cartContent.classList.contains('about-cart-content') || cartContent.classList.contains('contact-cart-content')){
+    if(CartCount && cartContent && (cartContent.classList.contains('cart-content') || cartContent.classList.contains('about-cart-content') || cartContent.classList.contains('contact-cart-content'))){
         if(dataPRD.length >= 1){
             CartCount.style.visibility = 'visible';
             CartCount.innerHTML = dataPRD.length;
@@ -226,14 +222,15 @@ function TotalPrice(){
     let totalchekout =  total - (total * 0.02) ;
 
 
-    TotalPriceElement.innerHTML = `$${total}`;
-    totalchekoutelement.innerHTML = `$${totalchekout}`;
-
-    coupon(totalchekout);
+    if (TotalPriceElement) TotalPriceElement.textContent = `${total}`;
+    if (totalchekoutelement) {
+        totalchekoutelement.textContent = `${totalchekout.toFixed(2)}`;
+        coupon(totalchekout);
+    }
 
 }
 
-if(cartContent.classList.contains('checkout-cart-content')){
+if(cartContent && cartContent.classList.contains('checkout-cart-content')){
     TotalPrice();
 }
 
@@ -246,6 +243,8 @@ function coupon(total){
     
     let couponbox = document.querySelector('.coupon-box');
 
+    if (!btncoupon || !codecoupon || btncoupon.dataset.bound) return;
+    btncoupon.dataset.bound = 'true';
     btncoupon.addEventListener('click',()=>{
 
         if(codecoupon.value === 'amine'){
@@ -366,7 +365,7 @@ if(cartContent.classList.contains('checkout-cart-content')){
 
 let BtnSendMessage = document.getElementById('sendMessage');
 
-BtnSendMessage.addEventListener('click',(e)=>{
+if (BtnSendMessage) BtnSendMessage.addEventListener('click',(e)=>{
     e.preventDefault();
 
     let name = document.querySelector('.name');
